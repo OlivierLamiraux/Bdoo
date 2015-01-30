@@ -1,0 +1,5 @@
+10 PRINT "Hello World"
+20 PRINT "Hello World2"
+30 LET a=3
+40 INPUT a
+50 INPUT a,b,c
