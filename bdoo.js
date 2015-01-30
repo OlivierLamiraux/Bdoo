@@ -567,31 +567,31 @@ pushState:function pushState(condition) {
 stateStackSize:function stateStackSize() {
         return this.conditionStack.length;
     },
-options: {},
+options: {"case-insensitive":true},
 performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/* skip whitespace */
 break;
-case 1:return 6
+case 1:return 9
 break;
-case 2:return 4
+case 2:return 'DIM'
 break;
-case 3:return 18
+case 3:return 11
 break;
-case 4:return 12
+case 4:return 15
 break;
-case 5:return 9
+case 5:return 13
 break;
-case 6:return 'DIM'
+case 6:return 17
 break;
-case 7:return 11
+case 7:return 6
 break;
-case 8:return 15
+case 8:return 18
 break;
-case 9:return 13
+case 9:return 4
 break;
-case 10:return 17
+case 10:return 12
 break;
 case 11:this.begin('string');
 break;
@@ -601,7 +601,7 @@ case 13: return 10;
 break;
 }
 },
-rules: [/^(?:[ \t]+)/,/^(?:\n|$)/,/^(?:[0-9]+)/,/^(?:[0-9]+\.[0-9]+)/,/^(?:[a-z][a-zA-Z0-9_]*[$%]?)/,/^(?:PRINT\b)/,/^(?:DIM\b)/,/^(?:LET\b)/,/^(?:INPUT\b)/,/^(?:=)/,/^(?:,)/,/^(?:")/,/^(?:")/,/^(?:(\\"|[^"])*)/],
+rules: [/^(?:[ \t]+)/i,/^(?:PRINT\b)/i,/^(?:DIM\b)/i,/^(?:LET\b)/i,/^(?:INPUT\b)/i,/^(?:=)/i,/^(?:,)/i,/^(?:\n|$)/i,/^(?:[0-9]+\.[0-9]+)/i,/^(?:[0-9]+)/i,/^(?:[a-z][a-zA-Z0-9_]*[$%]?)/i,/^(?:")/i,/^(?:")/i,/^(?:(\\"|[^"])*)/i],
 conditions: {"string":{"rules":[12,13],"inclusive":false},"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11],"inclusive":true}}
 });
 return lexer;

@@ -166,19 +166,20 @@ Real           = {digit}+.{digit}+
 /* lexical grammar */
 %lex
 %x string
+%options case-insensitive
 %%
 
 [ \t]+                   	/* skip whitespace */
-\n|<<EOF>>					return 'NEWLINE'
-[0-9]+						return 'INTEGER'
-[0-9]+\.[0-9]+				return 'REAL'
-[a-z][a-zA-Z0-9_]*[$%]?		return 'ID'
-"PRINT"               		return 'PRINT'
+"PRINT"                   	return 'PRINT'
 "DIM"						return 'DIM'
 "LET"						return 'LET'
 "INPUT"						return 'INPUT'
 "="							return 'EQUAL'
 ","							return 'COMMA'
+\n|<<EOF>>					return 'NEWLINE'
+[0-9]+\.[0-9]+				return 'REAL'
+[0-9]+						return 'INTEGER'
+[a-z][a-zA-Z0-9_]*[$%]?		return 'ID'
 
 '"'                   	this.begin('string');
 <string>'"'           	this.popState();
